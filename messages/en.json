@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "siteName": "Fenrir Foundation UA",
+    "homeTitle": "Fenrir Foundation UA — charitable foundation",
+    "homeDescription": "Chain the wolf. End the war. Transparent fundraising and reporting for Ukraine’s defense.",
+    "defaultDescription": "Fenrir Foundation UA: projects, reporting, donations."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "team": "Team",
+    "founder": "Founder",
+    "projects": "Projects",
+    "news": "News",
+    "reports": "Reports",
+    "partners": "Partners",
+    "donate": "Donate",
+    "getHelp": "Get help",
+    "contacts": "Contacts",
+    "privacy": "Privacy",
+    "offer": "Public offer"
+  },
+  "footer": {
+    "mission": "Our mission is transparent support for Ukraine’s Armed Forces: equipment, medicine, comms, training.",
+    "rights": "All rights reserved.",
+    "boNotice": "Fundraising follows Ukrainian law. Legal details are in “Public offer” and “Contacts”."
+  },
+  "home": {
+    "hero": {
+      "kicker": "Charitable foundation",
+      "title": "Chain the wolf. End the war.",
+      "subtitle": "Systemic support for defense: fundraising, procurement, reporting — public and on time.",
+      "ctaPrimary": "Donate",
+      "ctaSecondary": "Projects",
+      "badge": "Transparent spending · Monthly reports"
+    },
+    "founder": {
+      "title": "Founder",
+      "name": "Vadym Yeremenko",
+      "role": "Commander, UAV company · 158th Mechanized Brigade",
+      "quote": "Victory is built not by slogans, but by logistics, discipline, and donor trust.",
+      "link": "Founder page"
+    },
+    "projects": {
+      "title": "Foundation projects",
+      "subtitle": "Active campaigns — with progress bars and dedicated pages.",
+      "raised": "Raised",
+      "goal": "Goal",
+      "open": "Learn more"
+    },
+    "impact": {
+      "title": "Impact",
+      "subtitle": "Aggregated indicators (demo data for the MVP layout).",
+      "uah": "₴ delivered to procurement",
+      "drones": "Equipment / UAV units",
+      "vehicles": "Vehicles prepared / repaired",
+      "units": "Units supported"
+    },
+    "about": {
+      "title": "About the foundation",
+      "body": "Fenrir Foundation UA is an independent charity focused on transparency: every project has a goal, progress, and reporting.",
+      "statTrust": "Monthly PDF reports",
+      "statTrustVal": "Yes",
+      "statPartners": "Corporate partners",
+      "statPartnersVal": "Dedicated track"
+    },
+    "news": {
+      "title": "Latest news",
+      "subtitle": "Updates from procurement and partner units.",
+      "all": "All news"
+    },
+    "partners": {
+      "title": "Partners",
+      "subtitle": "Thanks to companies and organizations standing shoulder to shoulder with us."
+    },
+    "donate": {
+      "title": "Support",
+      "subtitle": "One-time or monthly. After payment gateways go live, LiqPay / Stripe buttons will appear here.",
+      "recurringHint": "Recurring: LiqPay subscriptions + Stripe (€/$) per the spec.",
+      "amount": "Amount (UAH)",
+      "email": "Email for receipt",
+      "note": "Comment (optional)",
+      "submit": "Continue to payment (MVP)",
+      "methods": "Payment methods (per spec)",
+      "methodsUa": "LiqPay · WayForPay · Monobank Jar · Privat24 · IBAN",
+      "methodsIntl": "Stripe · PayPal · Wise",
+      "crypto": "Crypto: BTC, ETH, USDT (TRC20), USDC, TON"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "About",
+      "lead": "We combine military experience, procurement discipline, and open reporting for donors."
+    },
+    "team": {
+      "title": "Team",
+      "lead": "Managed in CMS: bios, roles, photos."
+    },
+    "founder": {
+      "title": "Founder — Vadym Yeremenko",
+      "lead": "Biography, quote, and service context (content from the brief)."
+    },
+    "projects": {
+      "title": "All projects",
+      "lead": "Each project has its own page with progress, gallery, and a donate form."
+    },
+    "project": {
+      "goal": "Fundraising goal",
+      "raised": "Raised",
+      "gallery": "Delivered equipment",
+      "reports": "Reports (PDF)",
+      "donate": "Support this project",
+      "who": "Who we support"
+    },
+    "news": {
+      "title": "News",
+      "lead": "Blog: ISR for SEO + dedicated pages at /news/[slug]."
+    },
+    "reports": {
+      "title": "Reporting",
+      "lead": "Monthly financial reports, invoices, unit thank-yous — critical for donor trust."
+    },
+    "reportMonth": {
+      "title": "Report for period"
+    },
+    "partners": {
+      "title": "Partners",
+      "lead": "Logos and links are managed in the CMS."
+    },
+    "donate": {
+      "title": "Support the foundation",
+      "lead": "Full method list from the spec: UA, international, crypto, recurring."
+    },
+    "getHelp": {
+      "title": "Get help",
+      "lead": "Unit intake form (align process with legal/compliance).",
+      "formTitle": "Unit request (MVP)",
+      "unit": "Unit / callsign",
+      "unitPh": "e.g. 158th Mechanized Brigade",
+      "contact": "Point of contact",
+      "contactPh": "Full name",
+      "need": "Request",
+      "needPh": "Category, quantity, urgency (short)",
+      "submit": "Submit (MVP)"
+    },
+    "contacts": {
+      "title": "Contacts",
+      "lead": "Email, phone, NGO legal address, social links.",
+      "email": "Email",
+      "phone": "Phone",
+      "legal": "Legal address",
+      "legalBody": "Placeholder: after NGO registration — legal address and registration code."
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "lead": "GDPR-aligned text + cookie banner (enable after legal approval)."
+    },
+    "offer": {
+      "title": "Public offer",
+      "lead": "Legal text for charitable donations in Ukraine."
+    }
+  },
+  "donatePage": {
+    "uaTitle": "Ukrainian donors",
+    "intlTitle": "International donors",
+    "cryptoTitle": "Cryptocurrency",
+    "recurringTitle": "Recurring donations",
+    "recurringBody": "LiqPay subscriptions, Stripe subscriptions; optionally Patreon.",
+    "legalTitle": "Documents",
+    "legalBody": "NGO registration certificate, offer, privacy policy, annual non-profit report."
+  },
+  "article": {
+    "read": "Read",
+    "back": "Back to news"
+  },
+  "common": {
+    "wip": "MVP: content and payments will be wired in next phases (CMS + LiqPay/Stripe).",
+    "pdfPlaceholder": "PDF will be uploaded from the CMS.",
+    "openPdf": "Open PDF (placeholder)"
+  }
+}
