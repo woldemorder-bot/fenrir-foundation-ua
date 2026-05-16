@@ -1,13 +1,20 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { getSiteSettings } from "@/sanity/lib/fetchers";
+import { pickLocale } from "@/sanity/lib/i18n";
 
 export async function HomeDonate() {
-  const t = await getTranslations("home.donate");
-  const tc = await getTranslations("common");
+  const [t, tc, locale, settings] = await Promise.all([
+    getTranslations("home.donate"),
+    getTranslations("common"),
+    getLocale(),
+    getSiteSettings(),
+  ]);
+  const donateButtons = settings?.donateButtons ?? [];
 
   return (
     <section className="border-b border-border bg-card/10">
@@ -17,6 +24,26 @@ export async function HomeDonate() {
             <h2 className="text-3xl font-semibold tracking-tight">{t("title")}</h2>
             <p className="mt-3 text-muted leading-relaxed">{t("subtitle")}</p>
             <p className="mt-4 text-sm text-muted leading-relaxed">{t("recurringHint")}</p>
+
+            {donateButtons.length > 0 ? (
+              <div className="mt-6 flex flex-wrap gap-3">
+                {donateButtons.map((btn, idx) => {
+                  const label = pickLocale(btn.label, locale);
+                  if (!label || !btn.url) return null;
+                  return (
+                    <Button
+                      key={`${btn.url}-${idx}`}
+                      asChild
+                      variant={btn.variant === "secondary" ? "secondary" : "default"}
+                    >
+                      <a href={btn.url} target="_blank" rel="noreferrer">
+                        {label}
+                      </a>
+                    </Button>
+                  );
+                })}
+              </div>
+            ) : null}
 
             <div className="mt-8 space-y-3 rounded-xl border border-border bg-background/30 p-5">
               <div className="text-sm font-semibold">{t("methods")}</div>
