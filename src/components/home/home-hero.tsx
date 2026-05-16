@@ -1,7 +1,9 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { getSiteSettings } from "@/sanity/lib/fetchers";
+import { pickLocale } from "@/sanity/lib/i18n";
 
 function WolfSilhouette() {
   return (
@@ -25,7 +27,21 @@ function WolfSilhouette() {
 }
 
 export async function HomeHero() {
-  const t = await getTranslations("home.hero");
+  const [t, locale, settings] = await Promise.all([
+    getTranslations("home.hero"),
+    getLocale(),
+    getSiteSettings(),
+  ]);
+  const hero = settings?.heroBanner;
+
+  const badge = pickLocale(hero?.badge, locale) ?? t("badge");
+  const kicker = pickLocale(hero?.kicker, locale) ?? t("kicker");
+  const title = pickLocale(hero?.headline, locale) ?? t("title");
+  const subtitle = pickLocale(hero?.subline, locale) ?? t("subtitle");
+  const ctaPrimary = pickLocale(hero?.ctaPrimaryLabel, locale) ?? t("ctaPrimary");
+  const ctaSecondary = pickLocale(hero?.ctaSecondaryLabel, locale) ?? t("ctaSecondary");
+  const ctaPrimaryUrl = hero?.ctaPrimaryUrl ?? "/donate";
+  const ctaSecondaryUrl = hero?.ctaSecondaryUrl ?? "/projects";
 
   return (
     <section className="relative overflow-hidden border-b border-border">
@@ -35,21 +51,21 @@ export async function HomeHero() {
         <Reveal>
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3 py-1 text-xs text-muted backdrop-blur">
             <span className="size-1.5 rounded-full bg-primary" />
-            {t("badge")}
+            {badge}
           </div>
-          <p className="mt-5 text-sm font-medium text-primary">{t("kicker")}</p>
+          <p className="mt-5 text-sm font-medium text-primary">{kicker}</p>
           <h1 className="mt-3 text-balance text-4xl font-semibold tracking-tight md:text-5xl">
-            {t("title")}
+            {title}
           </h1>
           <p className="mt-4 max-w-prose text-pretty text-base text-muted md:text-lg">
-            {t("subtitle")}
+            {subtitle}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button asChild size="lg">
-              <Link href="/donate">{t("ctaPrimary")}</Link>
+              <Link href={ctaPrimaryUrl}>{ctaPrimary}</Link>
             </Button>
             <Button asChild size="lg" variant="secondary">
-              <Link href="/projects">{t("ctaSecondary")}</Link>
+              <Link href={ctaSecondaryUrl}>{ctaSecondary}</Link>
             </Button>
           </div>
         </Reveal>

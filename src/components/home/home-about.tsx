@@ -1,9 +1,17 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Card, CardContent } from "@/components/ui/card";
 import { Reveal } from "@/components/motion/reveal";
+import { RichText } from "@/components/portable-text";
+import { getSiteSettings } from "@/sanity/lib/fetchers";
+import { pickLocaleRich } from "@/sanity/lib/i18n";
 
 export async function HomeAbout() {
-  const t = await getTranslations("home.about");
+  const [t, locale, settings] = await Promise.all([
+    getTranslations("home.about"),
+    getLocale(),
+    getSiteSettings(),
+  ]);
+  const mission = pickLocaleRich(settings?.mission, locale);
 
   return (
     <section className="border-b border-border">
@@ -11,7 +19,13 @@ export async function HomeAbout() {
         <div className="grid gap-10 lg:grid-cols-3 lg:items-start">
           <Reveal className="lg:col-span-2">
             <h2 className="text-3xl font-semibold tracking-tight">{t("title")}</h2>
-            <p className="mt-4 max-w-prose text-pretty text-muted leading-relaxed">{t("body")}</p>
+            {mission ? (
+              <RichText value={mission} />
+            ) : (
+              <p className="mt-4 max-w-prose text-pretty text-muted leading-relaxed">
+                {t("body")}
+              </p>
+            )}
           </Reveal>
 
           <div className="grid gap-4">
