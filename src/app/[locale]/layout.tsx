@@ -6,6 +6,9 @@ import { routing } from "@/i18n/routing";
 import { LanguageSetter } from "@/components/language-setter";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { CookieBanner } from "@/components/consent/cookie-banner";
+import { AnalyticsScripts } from "@/components/consent/analytics-scripts";
+import { env } from "@/lib/env";
 
 type Props = {
   children: React.ReactNode;
@@ -58,6 +61,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <CookieBanner />
+        <AnalyticsScripts gtmId={env.gtmId} />
       </div>
     </NextIntlClientProvider>
   );
