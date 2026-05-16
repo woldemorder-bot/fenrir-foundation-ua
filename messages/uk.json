@@ -75,12 +75,12 @@
     },
     "donate": {
       "title": "Підтримка",
-      "subtitle": "Одноразово або щомісячно. Після підключення платіжних шлюзів тут з’являться кнопки LiqPay / Stripe тощо.",
+      "subtitle": "Одноразово або щомісячно через LiqPay (UA) або Stripe (міжнародні картки).",
       "recurringHint": "Регулярні донати: LiqPay subscriptions + Stripe (€/$) — за ТЗ.",
       "amount": "Сума (₴)",
       "email": "Email для квитанції",
       "note": "Коментар (необов’язково)",
-      "submit": "Перейти до оплати (MVP)",
+      "submit": "Перейти до оплати",
       "methods": "Платіжні методи (за ТЗ)",
       "methodsUa": "LiqPay · WayForPay · Monobank Jar · Privat24 · IBAN",
       "methodsIntl": "Stripe · PayPal · Wise",
@@ -173,8 +173,55 @@
     "read": "Читати",
     "back": "Назад до новин"
   },
+  "payments": {
+    "amount": "Сума (₴)",
+    "email": "Email для квитанції",
+    "note": "Коментар (необов’язково)",
+    "submit": "Перейти до оплаті",
+    "processing": "Перенаправлення…",
+    "presets": "Швидкий вибір",
+    "gateway": "Спосіб оплати",
+    "gatewayLiqpay": "LiqPay (UA)",
+    "gatewayStripe": "Stripe",
+    "recurring": "Щомісячна підтримка (регулярний платіж)",
+    "recaptchaNotice": "Захищено reCAPTCHA. Застосовуються Політика конфіденційності та Умови Google.",
+    "notConfiguredHint": "Платіжні ключі ще не налаштовані на сервері. Додайте LIQPAY_* та STRIPE_* у Vercel → Environment Variables.",
+    "errors": {
+      "minAmount": "Мінімальна сума — {min} ₴",
+      "email": "Вкажіть коректний email",
+      "recaptcha": "Не вдалося пройти перевірку reCAPTCHA. Спробуйте ще раз.",
+      "notConfigured": "Оплата тимчасово недоступна",
+      "generic": "Помилка. Спробуйте пізніше або напишіть на hello@fenrir.foundation",
+      "rate_limited": "Забагато спроб. Зачекайте хвилину.",
+      "recaptcha_required": "Потрібна перевірка reCAPTCHA",
+      "recaptcha_failed": "Перевірка reCAPTCHA не пройдена",
+      "liqpay_not_configured": "LiqPay не налаштовано",
+      "stripe_not_configured": "Stripe не налаштовано",
+      "invalid_body": "Некоректні дані форми"
+    },
+    "success": {
+      "kicker": "Дякуємо",
+      "title": "Платіж прийнято",
+      "body": "Якщо оплата пройшла успішно, квитанцію надішлемо на вказаний email. Деталі — у звітності фонду.",
+      "home": "На головну"
+    },
+    "cancel": {
+      "kicker": "Скасовано",
+      "title": "Оплату скасовано",
+      "body": "Кошти не списано. Ви можете спробувати ще раз у будь-який час.",
+      "retry": "Спробувати знову",
+      "home": "На головну"
+    }
+  },
+  "cookies": {
+    "title": "Файли cookie",
+    "body": "Ми використовуємо необхідні cookie для роботи сайту. Аналітичні cookie (Google Tag Manager) — лише за вашою згодою.",
+    "privacyLink": "Політика конфіденційності",
+    "essentialOnly": "Лише необхідні",
+    "acceptAll": "Прийняти всі"
+  },
   "common": {
-    "wip": "MVP: контент і платежі підключаються на наступних етапах (CMS + LiqPay/Stripe).",
+    "wip": "Розділ наповнюється. З питань — hello@fenrir.foundation.",
     "pdfPlaceholder": "PDF буде завантажено з CMS.",
     "openPdf": "Відкрити PDF (плейсхолдер)"
   }

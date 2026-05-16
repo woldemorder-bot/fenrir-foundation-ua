@@ -1,14 +1,11 @@
 import { getTranslations } from "next-intl/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { DonateFormShell } from "@/components/payments/donate-form-shell";
 
 export default async function DonatePage() {
   const t = await getTranslations("pages.donate");
   const td = await getTranslations("donatePage");
   const th = await getTranslations("home.donate");
-  const tc = await getTranslations("common");
 
   const blocks = [
     { title: td("uaTitle"), body: th("methodsUa") },
@@ -33,30 +30,14 @@ export default async function DonatePage() {
               <CardContent className="text-sm text-muted leading-relaxed">{b.body}</CardContent>
             </Card>
           ))}
-          <p className="text-xs text-muted">{tc("wip")}</p>
         </div>
 
         <Card>
           <CardHeader>
             <CardTitle className="text-base">{th("title")}</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="d-amount">{th("amount")}</Label>
-              <Input id="d-amount" inputMode="numeric" placeholder="500" />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="d-email">{th("email")}</Label>
-              <Input id="d-email" type="email" placeholder="you@domain.com" />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="d-note">{th("note")}</Label>
-              <Input id="d-note" placeholder="…" />
-            </div>
-            <Button className="w-full" type="button">
-              {th("submit")}
-            </Button>
-            <p className="text-xs text-muted">{th("recurringHint")}</p>
+          <CardContent>
+            <DonateFormShell />
           </CardContent>
         </Card>
       </div>

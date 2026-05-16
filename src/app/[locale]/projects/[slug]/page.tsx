@@ -5,9 +5,8 @@ import Image from "next/image";
 import { projects, isProjectSlug, projectSlugs } from "@/content/site";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { DonateFormShell } from "@/components/payments/donate-form-shell";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -125,15 +124,8 @@ export default async function ProjectPage({ params }: Props) {
             <CardHeader>
               <CardTitle className="text-base">{tp("donate")}</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="space-y-2">
-                <Label htmlFor={`amt-${slug}`}>₴</Label>
-                <Input id={`amt-${slug}`} inputMode="numeric" placeholder="500" />
-              </div>
-              <Button className="w-full" type="button">
-                {tp("donate")}
-              </Button>
-              <p className="text-xs text-muted">{tc("wip")}</p>
+            <CardContent>
+              <DonateFormShell projectSlug={slug} showRecurring />
             </CardContent>
           </Card>
         </aside>

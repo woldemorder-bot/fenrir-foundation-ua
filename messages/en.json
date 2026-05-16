@@ -75,12 +75,12 @@
     },
     "donate": {
       "title": "Support",
-      "subtitle": "One-time or monthly. After payment gateways go live, LiqPay / Stripe buttons will appear here.",
+      "subtitle": "One-time or monthly via LiqPay (UA) or Stripe (international cards).",
       "recurringHint": "Recurring: LiqPay subscriptions + Stripe (€/$) per the spec.",
       "amount": "Amount (UAH)",
       "email": "Email for receipt",
       "note": "Comment (optional)",
-      "submit": "Continue to payment (MVP)",
+      "submit": "Continue to payment",
       "methods": "Payment methods (per spec)",
       "methodsUa": "LiqPay · WayForPay · Monobank Jar · Privat24 · IBAN",
       "methodsIntl": "Stripe · PayPal · Wise",
@@ -173,8 +173,55 @@
     "read": "Read",
     "back": "Back to news"
   },
+  "payments": {
+    "amount": "Amount (UAH)",
+    "email": "Email for receipt",
+    "note": "Comment (optional)",
+    "submit": "Continue to payment",
+    "processing": "Redirecting…",
+    "presets": "Quick amount",
+    "gateway": "Payment method",
+    "gatewayLiqpay": "LiqPay (UA)",
+    "gatewayStripe": "Stripe",
+    "recurring": "Monthly support (recurring)",
+    "recaptchaNotice": "Protected by reCAPTCHA. Google Privacy Policy and Terms apply.",
+    "notConfiguredHint": "Payment keys are not configured on the server yet. Add LIQPAY_* and STRIPE_* in Vercel → Environment Variables.",
+    "errors": {
+      "minAmount": "Minimum amount is {min} UAH",
+      "email": "Enter a valid email",
+      "recaptcha": "reCAPTCHA verification failed. Please try again.",
+      "notConfigured": "Payments are temporarily unavailable",
+      "generic": "Something went wrong. Try again or email hello@fenrir.foundation",
+      "rate_limited": "Too many attempts. Please wait a minute.",
+      "recaptcha_required": "reCAPTCHA verification required",
+      "recaptcha_failed": "reCAPTCHA verification failed",
+      "liqpay_not_configured": "LiqPay is not configured",
+      "stripe_not_configured": "Stripe is not configured",
+      "invalid_body": "Invalid form data"
+    },
+    "success": {
+      "kicker": "Thank you",
+      "title": "Payment received",
+      "body": "If the payment succeeded, we will send a receipt to your email. See our reports for fund transparency.",
+      "home": "Back to home"
+    },
+    "cancel": {
+      "kicker": "Cancelled",
+      "title": "Payment cancelled",
+      "body": "No charge was made. You can try again anytime.",
+      "retry": "Try again",
+      "home": "Back to home"
+    }
+  },
+  "cookies": {
+    "title": "Cookies",
+    "body": "We use essential cookies for the site to work. Analytics cookies (Google Tag Manager) only with your consent.",
+    "privacyLink": "Privacy policy",
+    "essentialOnly": "Essential only",
+    "acceptAll": "Accept all"
+  },
   "common": {
-    "wip": "MVP: content and payments will be wired in next phases (CMS + LiqPay/Stripe).",
+    "wip": "This section is being updated. Contact hello@fenrir.foundation.",
     "pdfPlaceholder": "PDF will be uploaded from the CMS.",
     "openPdf": "Open PDF (placeholder)"
   }

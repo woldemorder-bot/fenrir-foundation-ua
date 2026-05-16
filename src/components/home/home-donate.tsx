@@ -1,13 +1,10 @@
 import { getTranslations } from "next-intl/server";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
+import { DonateFormShell } from "@/components/payments/donate-form-shell";
 
 export async function HomeDonate() {
   const t = await getTranslations("home.donate");
-  const tc = await getTranslations("common");
 
   return (
     <section className="border-b border-border bg-card/10">
@@ -24,8 +21,6 @@ export async function HomeDonate() {
               <div className="text-sm text-muted leading-relaxed">{t("methodsIntl")}</div>
               <div className="text-sm text-muted leading-relaxed">{t("crypto")}</div>
             </div>
-
-            <p className="mt-6 text-xs text-muted">{tc("wip")}</p>
           </Reveal>
 
           <Reveal delay={0.06}>
@@ -33,22 +28,8 @@ export async function HomeDonate() {
               <CardHeader>
                 <CardTitle className="text-base">{t("title")}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="amount">{t("amount")}</Label>
-                  <Input id="amount" inputMode="numeric" placeholder="500" name="amount" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">{t("email")}</Label>
-                  <Input id="email" type="email" placeholder="you@domain.com" name="email" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="note">{t("note")}</Label>
-                  <Input id="note" placeholder="…" name="note" />
-                </div>
-                <Button className="w-full" type="button">
-                  {t("submit")}
-                </Button>
+              <CardContent>
+                <DonateFormShell />
               </CardContent>
             </Card>
           </Reveal>
